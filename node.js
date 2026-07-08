@@ -1,9 +1,12 @@
 
 // Factory
 
-function Node() {
-    let value = null;
-    let nextNode = null;
+function Node(value) {
+
+    return {
+        value: value || null,
+        nextNode: null,
+    }
 }
 
 export default Node;
