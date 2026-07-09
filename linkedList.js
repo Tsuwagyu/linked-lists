@@ -1,30 +1,32 @@
-import Node from "./node"
+import Node from './node';
 
+class LinkedList {
 
-export default class LinkedList {
+    // blue print for a node using constuctor
 
     constructor() {
-        this.head = null;
+        this.head = null; // empty
     }
 
     append(value) {
-        const newNode = Node(value);
+        let newNode = Node(value);
         if (this.head === null) {
-            return (this.head = newNode);
+            this.head = newNode;
         }
-
-        let pointer = this.head;
-        if (pointer !== null) {
-             // pointer should point to the nextNode// 
-             }
     }
-
 
     prepend(value) {
-        if (this.head !== null) {
-
-        }
+        let newNode = Node(value);
+       
+        let oldNode = this.head;
+        this.head = newNode;
+        newNode.nextNode = oldNode;
+        
     }
+
+
+
 
 }
 
+export default LinkedList;
