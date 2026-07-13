@@ -27,4 +27,13 @@ describe('LinkedList', () => {
         expect(linkedList.head.value).toBe(10);
         expect(linkedList.head.nextNode.value).toBe(20);
     });
+
+    test('head checks if there is a head node otherwise return undefined', () => {
+        expect(linkedList.heads()).toBe(undefined);
+    });
+
+    test('head returns a value if we update it with something instead of undefined', () => {
+        linkedList.prepend(10);
+        expect(linkedList.heads().value).toBe(10);
+    });
 });     
