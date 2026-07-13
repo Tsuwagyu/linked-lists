@@ -36,4 +36,11 @@ describe('LinkedList', () => {
         linkedList.prepend(10);
         expect(linkedList.heads().value).toBe(10);
     });
+
+    test('tail checks if there is a final node, and if so return it', () => {
+        linkedList.prepend(5);
+        linkedList.append(20);
+        console.log(linkedList.size());
+        expect(linkedList.tail()).toBe(20);
+    })
 });     
