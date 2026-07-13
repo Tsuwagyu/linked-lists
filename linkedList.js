@@ -40,11 +40,25 @@ class LinkedList {
 
         return count
 
-        
-
-
+    
 
         
+    }
+
+    heads() {
+
+        let current = this.head;
+
+        if (current !== null) {
+            return current;
+        } else {
+            return undefined;
+        }
+
+
+
+
+
     }
 
 
