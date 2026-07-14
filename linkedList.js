@@ -64,27 +64,21 @@ class LinkedList {
     }
 
     tail() {
+
         let currentNode = this.head;
         let allNodes = [];
-        let finalNode;
 
-        if (finalNode !== null) {
+        while (currentNode !== null) {
 
-            while (currentNode !== null) {
+            allNodes.push(currentNode);
+            currentNode = currentNode.nextNode;
 
-                allNodes.push(currentNode);
-                currentNode = currentNode.nextNode;
-
-                return allNodes;
-
-            }
-
-            let finalNode = allNodes.at(-1);
-            return finalNode;
-
-        } else {
-            return undefined;
         }
+        console.log(currentNode);
+
+        return allNodes.at(-1);
+
+            
 
     }
 
