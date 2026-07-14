@@ -9,18 +9,17 @@ class LinkedList {
     }
 
     append(value) {
-        let newNode = Node(value);
-        let current = this.head;
+        let nodeFactoryRef = Node(value);
 
-        if (current === null) {
-            current = newNode;
-        }
+        if (this.head === null) {
+            return this.head = nodeFactoryRef;
+        } 
 
     }
 
     prepend(value) {
+
         let newNode = Node(value);
-       
         let oldNode = this.head;
         this.head = newNode;
         newNode.nextNode = oldNode;
