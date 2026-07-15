@@ -124,6 +124,28 @@ class LinkedList {
 
     }
 
+    pop() {
+        
+        if (this.head === null) return undefined;
+
+
+        let currentNode = this.head;
+        let allNodes = [];
+        
+        while (currentNode !== null) {
+
+            allNodes.push(currentNode);
+            currentNode = currentNode.nextNode;
+
+        }
+
+        return allNodes[0].value;
+
+
+
+
+    }
+
 
 
 
