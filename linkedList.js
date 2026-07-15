@@ -100,6 +100,30 @@ class LinkedList {
 
     }
 
+    at(index) {
+
+        if (this.head === null) return undefined;
+
+        let currentNode = this.head;
+        let allNodes = [];
+        
+        while (currentNode !== null) {
+
+            allNodes.push(currentNode);
+            currentNode = currentNode.nextNode;
+
+        }
+
+        if (allNodes[index] !== undefined) {
+            return allNodes[index].value;
+        }
+    
+
+
+
+
+    }
+
 
 
 
