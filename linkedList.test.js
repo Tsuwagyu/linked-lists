@@ -54,12 +54,32 @@ describe('LinkedList', () => {
         expect(linkedList.at(2)).toBe(500);
     });
 
+    test('at method returns undefined without list', () => {
+        linkedList.prepend();
+        expect(linkedList.prepend()).toBe(undefined);
+    })
+
     test('pop method returns head val', () => {
         linkedList.prepend(10);
         linkedList.prepend(20);
         linkedList.append(500);
         linkedList.pop();
         expect(linkedList.pop()).toBe(20);
+    });
+
+    test('pop without list returns undefined', () => {
+        linkedList.pop();
+
+        expect(linkedList.pop()).toBe(undefined);
+    })
+
+    test('contains method return true', () => {
+        linkedList.prepend(10);
+        linkedList.prepend(20);
+        linkedList.append(500);
+
+        expect(linkedList.contains(500)).toBe(true);
+        
     });
 
 });     
