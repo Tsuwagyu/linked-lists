@@ -125,7 +125,7 @@ class LinkedList {
     }
 
     pop() {
-        
+
         if (this.head === null) return undefined;
 
 
@@ -140,6 +140,25 @@ class LinkedList {
         }
 
         return allNodes[0].value;
+
+
+
+
+    }
+
+    contains(value) {
+
+        let currentNode = this.head;
+
+        while (currentNode !== null) {
+
+            if (currentNode.value === value) return true;
+
+            currentNode = currentNode.nextNode;
+        }
+
+        return false;
+
 
 
 
