@@ -52,6 +52,14 @@ describe('LinkedList', () => {
         linkedList.append(500);
         linkedList.at(2); 
         expect(linkedList.at(2)).toBe(500);
-    })
+    });
+
+    test('pop method returns head val', () => {
+        linkedList.prepend(10);
+        linkedList.prepend(20);
+        linkedList.append(500);
+        linkedList.pop();
+        expect(linkedList.pop()).toBe(20);
+    });
 
 });     
