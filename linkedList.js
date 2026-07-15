@@ -79,6 +79,11 @@ class LinkedList {
 
     tail() {
 
+
+        if (this.head === null) {
+            return undefined;
+        }
+
         let currentNode = this.head;
         let allNodes = [];
 
@@ -88,13 +93,8 @@ class LinkedList {
             currentNode = currentNode.nextNode;
 
         }
-        console.log(currentNode);
 
         return allNodes.at(-1);
-
-        if (this.head === null) {
-            return undefined;
-        }
 
             
 
