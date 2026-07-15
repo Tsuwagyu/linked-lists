@@ -29,21 +29,21 @@ describe('LinkedList', () => {
     });
 
     test('head checks if there is a head node otherwise return undefined', () => {
-        expect(linkedList.heads()).toBe(undefined);
-    });
-
-    test('head returns a value if we update it with something instead of undefined', () => {
         linkedList.prepend(10);
         linkedList.prepend(20);
-        linkedList.prepend(30);
+        expect(linkedList.head.value).toBe(20);
+    });
+
+    test('tail returns last node', () => {
+        linkedList.prepend(10);
+        linkedList.prepend(20);
         linkedList.append(500);
 
-        // head is going to be 30 bc we're moving hea
-        expect(linkedList.head.value).toBe(30);
         expect(linkedList.tail().value).toBe(500);
     });
 
-    test('tail returns final node', () => {
-        
-    })
+    test('tail returns undefined if empty', () => {
+        expect(linkedList.tail()).toBe(undefined);    
+    }); 
+
 });     
