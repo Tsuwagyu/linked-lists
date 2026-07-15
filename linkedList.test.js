@@ -46,4 +46,12 @@ describe('LinkedList', () => {
         expect(linkedList.tail()).toBe(undefined);    
     }); 
 
+    test('at method returns something', () => {
+        linkedList.prepend(10);
+        linkedList.prepend(20);
+        linkedList.append(500);
+        linkedList.at(2); 
+        expect(linkedList.at(2)).toBe(500);
+    })
+
 });     
