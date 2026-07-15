@@ -15,6 +15,20 @@ class LinkedList {
             return this.head = nodeFactoryRef;
         } 
 
+        // other if condition is unnecessary but using for readability
+
+        if (this.head !== null) {
+
+            let headRef = this.head;
+            
+            while (headRef.nextNode !== null) {
+                headRef = headRef.nextNode;
+
+            }
+
+            return headRef.nextNode = nodeFactoryRef;
+        }
+
     }
 
     prepend(value) {
@@ -77,6 +91,10 @@ class LinkedList {
         console.log(currentNode);
 
         return allNodes.at(-1);
+
+        if (this.head === null) {
+            return undefined;
+        }
 
             
 
