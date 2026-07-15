@@ -34,13 +34,16 @@ describe('LinkedList', () => {
 
     test('head returns a value if we update it with something instead of undefined', () => {
         linkedList.prepend(10);
-        expect(linkedList.heads().value).toBe(10);
+        linkedList.prepend(20);
+        linkedList.prepend(30);
+        linkedList.append(500);
+
+        // head is going to be 30 bc we're moving hea
+        expect(linkedList.head.value).toBe(30);
+        expect(linkedList.tail().value).toBe(500);
     });
 
-    test('tail checks if there is a final node, and if so return it', () => {
-        linkedList.prepend(5);
-        linkedList.append(20);
-        console.log(linkedList.size());
-        expect(linkedList.tail()).toBe(20);
+    test('tail returns final node', () => {
+        
     })
 });     
