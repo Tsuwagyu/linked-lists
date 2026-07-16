@@ -102,6 +102,20 @@ describe('LinkedList', () => {
         linkedList.prepend(1);
 
         expect(linkedList.findIndex(40)).toBe(-1);
-    })
+    });
+
+    test('return stringified array with expected formatting', () => {
+        linkedList.append(1);
+        linkedList.append(10);
+        linkedList.append(20);
+        linkedList.append(500);
+        linkedList.append(600);
+
+        expect(linkedList.toString()).toBe("( 1 ) -> ( 10 ) -> ( 20 ) -> ( 500 ) -> ( 600 ) -> null");
+    });
+
+    test ('empty string if toString is called on nothing', () => {
+        expect(linkedList.toString()).toBe("");
+    });
 
 });     
