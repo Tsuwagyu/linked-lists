@@ -165,6 +165,33 @@ class LinkedList {
 
     }
 
+    findIndex(value) {
+
+        let currentNode = this.head;
+        let allNodes = [];
+        
+        while (currentNode !== null) {
+
+            allNodes.push(currentNode);
+            currentNode = currentNode.nextNode;
+
+
+        }
+
+        for (let i = 0; i < allNodes.length; i++) {
+
+            if (allNodes[i].value === value) {
+                return i;
+            }   
+   
+        }
+
+        return -1;
+
+
+
+    }
+
 
 
 
