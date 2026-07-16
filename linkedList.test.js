@@ -82,4 +82,26 @@ describe('LinkedList', () => {
         
     });
 
+    test('return index when value matches', () => {
+        linkedList.prepend(1);
+        linkedList.prepend(10);
+        linkedList.prepend(20);
+        linkedList.append(500);
+        linkedList.append(600);
+        linkedList.prepend(1);
+
+        expect(linkedList.findIndex(1)).toBe(0);
+    });
+
+    test('return -1 when index value is not found', () => {
+        linkedList.prepend(1);
+        linkedList.prepend(10);
+        linkedList.prepend(20);
+        linkedList.append(500);
+        linkedList.append(600);
+        linkedList.prepend(1);
+
+        expect(linkedList.findIndex(40)).toBe(-1);
+    })
+
 });     
