@@ -192,6 +192,30 @@ class LinkedList {
 
     }
 
+    toString() {
+        
+        if (this.head === null) return "";
+
+        let currentNode = this.head;
+        let arrayOfValues = [];
+
+        while (currentNode !== null) {
+
+            let stringValue = currentNode.value.toString();
+            arrayOfValues.push(`( ${stringValue} )`);
+            currentNode = currentNode.nextNode;
+            
+        }
+        
+        
+        arrayOfValues.push("null");
+
+        return arrayOfValues.join(" -> ");
+
+
+
+    }
+
 
 
 
