@@ -216,6 +216,46 @@ class LinkedList {
 
     }
 
+    insertAt(index, ...values) {
+
+
+        if (index < 0 || this.head === null) {
+            throw new RangeError('Index value must be between 0 and list size');
+        }
+
+        // create new nodes based on values,
+
+        if (this.head !== null) {
+
+            let prevNode = Node(values[0]);
+            let newNodeChain = [prevNode];
+
+
+            for (let i = 1; i < values.length; i++) {
+                let newNode = Node(values[i]);
+                prevNode.nextNode = newNode;
+                prevNode = newNode;
+                newNodeChain.push(newNode);
+
+            }
+
+            if (index === 0) {
+                
+                newNodeChain.at(-1).nextNode = this.head;
+                this.head = newNodeChain[0];
+            }
+
+            
+
+
+
+        }
+
+
+
+
+    }
+
 
 
 
