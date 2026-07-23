@@ -166,7 +166,54 @@ describe('LinkedList', () => {
 
     test('negative index rejected', () => {
         expect(() => linkedList.insertAt(-1, 99)).toThrow(RangeError);
-    })
+    });
+
+    describe('removeAt', () => {
+        beforeEach(() => {
+            linkedList = new LinkedList();
+            linkedList.append(1);
+            linkedList.append(10);
+            linkedList.append(20);
+            linkedList.append(500);
+            linkedList.append(600);
+        });
+
+        test('removes the head at index 0', () => {
+            linkedList.removeAt(0);
+
+            expect(linkedList.toString()).toBe(
+                '( 10 ) -> ( 20 ) -> ( 500 ) -> ( 600 ) -> null'
+            );
+        });
+
+        test('removes a node from the middle', () => {
+            linkedList.removeAt(2);
+
+            expect(linkedList.toString()).toBe(
+                '( 1 ) -> ( 10 ) -> ( 500 ) -> ( 600 ) -> null'
+            );
+        });
+
+        test('removes the tail', () => {
+            linkedList.removeAt(4);
+
+            expect(linkedList.toString()).toBe(
+                '( 1 ) -> ( 10 ) -> ( 20 ) -> ( 500 ) -> null'
+            );
+        });
+
+        test('throws for a negative index', () => {
+            expect(() => linkedList.removeAt(-1)).toThrow(RangeError);
+        });
+
+        test('throws when index equals the list length', () => {
+            expect(() => linkedList.removeAt(5)).toThrow(RangeError);
+        });
+
+        test('throws when index is greater than the list length', () => {
+            expect(() => linkedList.removeAt(100)).toThrow(RangeError);
+        });
+    });
     
 
 });     
