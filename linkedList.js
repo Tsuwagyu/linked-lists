@@ -257,7 +257,7 @@ class LinkedList {
                 }
 
                 let afterNode = current.nextNode;
-                current.nextnode = newNodeChain[0];
+                current.nextNode = newNodeChain[0];
                 newNodeChain.at(-1).nextNode = afterNode;
             }
 
@@ -273,16 +273,61 @@ class LinkedList {
 
 
         }
+    }
+
+        removeAt(index) {
+
+            if (index < 0 || this.head === null) {
+                throw new RangeError('Index value must be between 0 and list size');
+            }
+            
+            
+            let current = this.head
+            let count = 0;
+
+            while (current !== null) {
+                count++;
+                current = current.nextNode;
+            }
+
+            if (index >= count) {
+                throw new RangeError('Index value must be between 0 and list size');
+            }
+
+            if (index === 0) {
+                this.head = this.head.nextNode;
+            }
+
+            if (index > 0) {
+
+                let current = this.head;
+
+                for (let i = 0; i < index - 1; i++) {
+                    current = current.nextNode;
+                }
+
+                let nodeToRemove = current.nextNode;
+
+                current.nextNode = nodeToRemove.nextNode;
+
+
+            }
+            
+
+
+
+            
 
 
 
 
+
+
+
+
+        }
     }
 
 
-
-
-
-}
 
 export default LinkedList;
