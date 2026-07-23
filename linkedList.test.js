@@ -118,4 +118,55 @@ describe('LinkedList', () => {
         expect(linkedList.toString()).toBe("");
     });
 
+    test('handles index being 0', () => {
+        let numbers = [2, 4, 6];
+        linkedList.append(1);
+        linkedList.append(10);
+        linkedList.append(20);
+        linkedList.append(500);
+        linkedList.append(600);
+        linkedList.insertAt(0, ...numbers);
+
+        expect(linkedList.toString()).toBe('( 2 ) -> ( 4 ) -> ( 6 ) -> ( 1 ) -> ( 10 ) -> ( 20 ) -> ( 500 ) -> ( 600 ) -> null');
+    });
+
+
+    test('insert multiple nodes at index 0', () => {
+        linkedList.append(1);
+        linkedList.append(10);
+        linkedList.append(20);
+        linkedList.append(500);
+        linkedList.append(600);
+        linkedList.insertAt(0, 2, 4, 6);
+        expect(linkedList.toString()).toBe('( 2 ) -> ( 4 ) -> ( 6 ) -> ( 1 ) -> ( 10 ) -> ( 20 ) -> ( 500 ) -> ( 600 ) -> null');
+    });
+
+    test('inserts multiple nodes in middle', () => {
+        linkedList.append(1);
+        linkedList.append(10);
+        linkedList.append(20);
+        linkedList.append(500);
+        linkedList.append(600);
+        linkedList.insertAt(2, 2, 4, 6);
+        expect(linkedList.toString()).toBe('( 1 ) -> ( 10 ) -> ( 2 ) -> ( 4 ) -> ( 6 ) -> ( 20 ) -> ( 500 ) -> ( 600 ) -> null');
+
+    });
+
+
+    test('insert single node', () => {
+        linkedList.append(1);
+        linkedList.append(10);
+        linkedList.append(20);
+        linkedList.append(500);
+        linkedList.append(600);
+        linkedList.insertAt(3, 99);
+        expect(linkedList.toString()).toBe('( 1 ) -> ( 10 ) -> ( 20 ) -> ( 99 ) -> ( 500 ) -> ( 600 ) -> null');
+        
+    });
+
+    test('negative index rejected', () => {
+        expect(() => linkedList.insertAt(-1, 99)).toThrow(RangeError);
+    })
+    
+
 });     
