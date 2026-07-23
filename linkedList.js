@@ -230,7 +230,7 @@ class LinkedList {
             let prevNode = Node(values[0]);
             let newNodeChain = [prevNode];
 
-
+            // create array with reference to new nodes
             for (let i = 1; i < values.length; i++) {
                 let newNode = Node(values[i]);
                 prevNode.nextNode = newNode;
@@ -239,11 +239,34 @@ class LinkedList {
 
             }
 
+            // base case for index being 0
+
             if (index === 0) {
-                
                 newNodeChain.at(-1).nextNode = this.head;
                 this.head = newNodeChain[0];
             }
+
+            // inserting
+                
+
+            if (index > 0) {
+                let current = this.head;
+
+                for (let i = 0; i < index - 1; i++) {
+                    current = current.nextNode;
+                }
+
+                let afterNode = current.nextNode;
+                current.nextnode = newNodeChain[0];
+                newNodeChain.at(-1).nextNode = afterNode;
+            }
+
+
+            
+
+            
+
+
 
             
 
